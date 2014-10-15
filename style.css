@@ -1,0 +1,234 @@
+body {
+    font:1.6em Helvetica, Arial, sans-serif;
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration:none;
+}
+
+p, h1, h2, h3, a{
+    color: #0480B9;
+    text-shadow: 0px 0px 15px #0480B9;
+}
+
+:focus, :active{
+    outline: none;
+}
+
+.pai{
+    margin: 5px auto 0px;
+    padding: 0;
+    width: 750px;
+    border: 3px solid #0000FF;
+    border-top: none;
+}
+
+.interna{
+    box-shadow: 0px 0px 40px 1px #0000FF, 0px 0px 40px 1px #0000FF inset;
+}
+
+.meuMenu {
+    height: 50px;
+    text-align: center;
+    margin:0;
+    padding:0;
+    width: 100%;
+}
+
+.meuMenu li {
+    position: relative;
+    display: inline-block;
+    list-style:none;
+    height: 50px;
+    width: 25%;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0px 0px 40px 5px #0000FF, 0px 0px 40px 5px #0000FF inset;
+}
+
+.meuMenu a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block; 
+    line-height: 50px;
+    margin: 0;
+    padding: 0;
+    border-right: 1.5px solid #0000FF;
+    border-top: 3px solid #0000FF;
+    border-left: 1.5px solid #0000FF;
+    border-bottom: 1.5px solid #0000FF;
+}
+
+.meuMenu a:hover{
+    color: #000000;
+    z-index: 1;
+    border: 3px solid #C0D4E2;
+    background: #7db9e8; /* Old browsers */
+    background: -moz-linear-gradient(top, #7db9e8 0%, #9ec6e5 51%, #7db9e8 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7db9e8), color-stop(51%,#9ec6e5), color-stop(100%,#7db9e8)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #7db9e8 0%,#9ec6e5 51%,#7db9e8 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #7db9e8 0%,#9ec6e5 51%,#7db9e8 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #7db9e8 0%,#9ec6e5 51%,#7db9e8 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #7db9e8 0%,#9ec6e5 51%,#7db9e8 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0480b9', endColorstr='#0480b9',GradientType=0 );
+    box-shadow: 0px 0px 40px 1px #9ec6e5, 0px 0px 40px 1px #9ec6e5 inset;
+}
+
+.meuMenu li:hover a:after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: " ";
+    border: 3px solid #C0D4E2;
+    box-shadow: 0px 0px 40px 1px #9ec6e5, 0px 0px 40px 1px #9ec6e5 inset;
+    z-index: 1;
+}
+
+.logo{
+    height: 30px;
+    display: inline-block;
+    vertical-align: text-bottom;
+}
+
+.acordion{
+    text-align: center;
+    color: #FF0000;
+}
+
+.ui-accordion-header{
+    margin: 0 !important;
+    border-bottom: 1.5px solid #0000FF;
+    border-top: 1.5px solid #0000FF;
+    box-shadow: 0px 0px 40px 1px #0000FF, 0px 0px 40px 1px #0000FF inset;
+}
+
+.ui-state-hover{
+    color: #000000;
+    z-index: 1;
+    border: 1.5px solid #C0D4E2;
+    background: #7db9e8; /* Old browsers */
+    background: -moz-linear-gradient(top, #7db9e8 0%, #9ec6e5 51%, #7db9e8 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7db9e8), color-stop(51%,#9ec6e5), color-stop(100%,#7db9e8)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #7db9e8 0%,#9ec6e5 51%,#7db9e8 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #7db9e8 0%,#9ec6e5 51%,#7db9e8 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #7db9e8 0%,#9ec6e5 51%,#7db9e8 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #7db9e8 0%,#9ec6e5 51%,#7db9e8 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0480b9', endColorstr='#0480b9',GradientType=0 );
+    box-shadow: 0px 0px 40px 1px #9ec6e5, 0px 0px 40px 1px #9ec6e5 inset;
+}
+
+.ui-state-active{
+    color: #000000;
+    z-index: 1;
+    border: 3px solid #C0D4E2;
+    background: #7db9e8; /* Old browsers */
+    background: -moz-linear-gradient(top, #7db9e8 0%, #9ec6e5 51%, #7db9e8 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7db9e8), color-stop(51%,#9ec6e5), color-stop(100%,#7db9e8)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #7db9e8 0%,#9ec6e5 51%,#7db9e8 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #7db9e8 0%,#9ec6e5 51%,#7db9e8 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #7db9e8 0%,#9ec6e5 51%,#7db9e8 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #7db9e8 0%,#9ec6e5 51%,#7db9e8 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0480b9', endColorstr='#0480b9',GradientType=0 );
+    box-shadow: 0px 0px 40px 1px #9ec6e5, 0px 0px 40px 1px #9ec6e5 inset;
+}
+
+.ui-state-active:after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: " ";
+    border: 3px solid #C0D4E2;
+    box-shadow: 0px 0px 40px 1px #9ec6e5, 0px 0px 40px 1px #9ec6e5 inset;
+    z-index: 1;
+}
+
+.ui-accordion-content{
+    padding: 0 !important;
+    border-bottom: 1.5px solid #0000FF;
+}
+
+marquee{
+    width: 100%;
+    height: 300px;
+}
+
+marquee p{
+    text-align: center;
+}
+
+.menuBaixo{
+    text-align: center;
+    border-top: 1.5px solid #0000FF;
+    box-shadow: 0px 0px 40px 1px #0000FF, 0px 0px 40px 1px #0000FF inset;
+}
+
+.imgBaixo{
+    margin: 5px 0;
+    height: 100px;
+}
+
+/*efeitos do jogo*/
+
+.palco{
+    height: 750px;
+    width: 750px;
+    position: absolute;
+    top: 55px;
+    left: calc(50% - 378px);
+    left: -webkit-calc(50% - 378px);
+    left: -moz-calc(50% - 378px);
+    border: 3px solid #0000FF;
+}
+
+.personagem{
+    position: absolute;
+    display: inline-block;
+    background: rgba(0,0,0,0) url("") no-repeat center;
+    background-size: 100% 100%;
+    z-index: 2;
+}
+
+.heroi{
+    height: 20px;
+    width: 20px;
+    background-image: url(imagens/heroi.png);
+    top: calc(50% - 10px);
+    top: -webkit-calc(50% - 10px);
+    top: -moz-calc(50% - 10px);
+    left: calc(50% - 10px);
+    left: -webkit-calc(50% - 10px);
+    left: -moz-calc(50% - 10px);
+}
+
+.inimigo{
+    height: 15px;
+    width: 15px;
+    background-image: url(imagens/pacmanFechado.png);
+}
+
+.saida{
+    position: fixed;
+    z-index: 1;
+    display: inline-block;
+    background: rgba(0,0,0,0) url("") no-repeat center;
+    background-size: 100% 100%;
+    border-radius: 25px;
+}
+
+.fruta{
+    height: 10px;
+    width: 10px;
+}
