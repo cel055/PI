@@ -193,6 +193,31 @@ marquee p{
     border: 3px solid #0000FF;
 }
 
+.menuJogo{
+    font-size: 0.7em;
+    z-index: 10;
+    display: inline-block;
+    position: fixed;
+    height: 300px;
+    width: 300px;
+    top: calc(50% - 150px);
+    left: calc(50% - 150px);
+    top: -webkit-calc(50% - 150px);
+    left: -webkit-calc(50% - 150px);
+}
+
+.menuJogo .radios{
+    display: inline-block;
+    width: 150px;
+    height: 100%;
+}
+
+.menuJogo .custom{
+    display: inline-block;
+    width: 150px;
+    height: 100%;
+}
+
 .personagem{
     position: absolute;
     display: inline-block;
