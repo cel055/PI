@@ -17,11 +17,13 @@
             
             <div style="margin:0;height:50px">
                  <ul class="meuMenu">
-                    <li><a href="index.html"><img class="logo" src="imagens/pacbad.png"/>Inicio</a></li><li><a href="C:\Users\salewskihs\Documents\GitHub\PI">Contato</a></li><li><a href="#">Historia</a></li><li><a href="jogo.html">Jogo</a></li>
+                    <li><a href="index.html"><img class="logo" src="imagens/pacbad.png"/>Inicio</a></li><li><a href="menuContato.html">Contato</a></li><li><a href="#">Historia</a></li><li><a href="jogo.html">Jogo</a></li>
                 </ul>
   
 
   <div id="contato">
+       
+      
 
   <form name="formulario" action="http://emailpacmonster.com" method="post">
 
@@ -31,19 +33,19 @@
 
   <p><img class="logo" src="imagens/cereja.png"/><b>Nome:</b><br>
 
-  <input type=text name="nome" size="45"></p><br>
+  <input type=text name="nome" size="45"></p>
 
   <p><img class="logo" src="imagens/laranja.png"/><b>Email:</b><br>
 
-  <input type=text name="email" size="45"></p><br>
+  <input type=text name="email" size="45"></p>
 
   <p><img class="logo" src="imagens/morango.png"/><b>Assunto:</b><br>
-  <input type=text name="assunto" size="45"></p><br>
-  <p><img class="logo" src="imagens/heroi.png"/><b>Mensagem:</b><br>
-  <textarea name="Mensagem" rows="10" cols="60" wrap="virtual"></textarea></p><br>
+  <input type=text name="assunto" size="45"></p>
+  <p class="textarea"><img class="logo" src="imagens/heroi.png"/><b>Mensagem:</b></br>
+  <textarea name="Mensagem" rows="10" cols="60" wrap="virtual"></textarea></p>
   
 
-  <p><input type="submit" value="Enviar Email"> <input type="reset" value="Limpar"><img class="logo" src="imagens/pacmanAberto.png"/></p>
+      <p class="botoes"><input type="submit" value="Enviar Email"> <input type="reset" value="Limpar"><img class="logo" src="imagens/pacmanAberto.png"/></p>
   </form>
 
   <div>
@@ -54,13 +56,35 @@
   <style>
 
   p{
-    padding: 20px; 
-   
+    padding: 20px;
+      margin: 0;
+      
   }
+      
+      .textarea{
+        padding-bottom: 0;
+      }
+      
+.botoes{
+    padding: 0 0 20px 20px;
+}
+      
+      
  form{
    border: 1px solid #0000FF;
    box-shadow: 0px 0px 40px 1px #0000FF, 0px 0px 40px 1px #0000FF inset;
  }
+      
+ input,textarea{
+     border: 1px solid #0000FF;
+   box-shadow: 0px 0px 40px 1px #0000FF, 0px 0px 40px 1px #0000FF inset;
+     background-color: black;
+     color: #0480b9;
+     
+ }
+
+      
+       
 
   </style>
 
