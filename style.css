@@ -222,26 +222,43 @@ marquee p{
 .menuJogo{
     font-size: 0.7em;
     z-index: 10;
-    display: inline-block;
     position: fixed;
-    height: 300px;
-    width: 300px;
-    top: calc(50% - 150px);
-    left: calc(50% - 150px);
-    top: -webkit-calc(50% - 150px);
-    left: -webkit-calc(50% - 150px);
+    height: 400px;
+    width: 400px;
+    top: calc(50% - 200px);
+    left: calc(50% - 200px);
+    top: -webkit-calc(50% - 200px);
+    left: -webkit-calc(50% - 200px);
+    border: 3px solid #0000FF;
+    background-color: #000000;
+    text-align: center;
 }
 
-.menuJogo .radios{
-    display: inline-block;
-    width: 150px;
-    height: 100%;
+.menuJogo div{
+    margin: 10px 0;
 }
 
-.menuJogo .custom{
-    display: inline-block;
-    width: 150px;
-    height: 100%;
+.menuJogo p{
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+
+.menuJogo .custom div{
+    display: table-cell;
+    width: 20%;
+}
+
+.menuJogo .custom div input[type=range]{
+    -webkit-appearance:slider-vertical
+}
+
+.menuJogo input[type=button]{
+    position: absolute;
+    bottom: 0;
+    top: 350px;
+    left: 0;
+    width: 100%;
 }
 
 .personagem{
