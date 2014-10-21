@@ -34,40 +34,55 @@
                 </div>
 				
                 <div class="custom">
-                    
-					<div>
-						<input id="saida" type="range" min="1" max="10" value="5"/>
-						<br/>
-						<label for="saida">Velocidade da saída</label>
-					</div>
+                    <table>
+					<tr>
+                        <td>
+						  <label for="saida">Velocidade da saída</label>
+                        </td>
+                        <td>
+                            <input id="saida" type="range" min="1" max="10" value="5"/>
+                        </td>
+					</tr>
 					
-					<div>
-						<input id="heroi" type="range" min="1" max="10" value="5"/>
-						<br/>
-						<label for="heroi">Velocidade do fantasma</label>
-					</div>
+					<tr>
+                        <td>
+                            <label for="heroi">Velocidade do fantasma</label>
+                        </td>
+                        <td>
+                            <input id="heroi" type="range" min="1" max="10" value="5"/>
+                        </td>
+					</tr>
 					
-					<div>
-						<input id="inimigo" type="range" min="1" max="10" value="5"/>
-						<br/>
-						<label for="inimigo">Velocidade do inimigo</label>
-					</div>
+					<tr>
+                        <td>
+                            <label for="inimigo">Velocidade do inimigo</label>
+                        </td>
+                        <td>
+                            <input id="inimigo" type="range" min="1" max="10" value="5"/>
+                        </td>
+					</tr>
 					
-					<div>
-						<input id="criacao" type="range" min="1" max="10" value="5"/>
-						<br/>
-						<label for="criacao">Velocidade de criação do inimigo</label>
-					</div>
+					<tr>
+                        <td>
+                            <label for="criacao">Velocidade de criação do inimigo</label>
+                        </td>
+                        <td>
+                            <input id="criacao" type="range" min="1" max="10" value="5"/>
+                        </td>
+					</tr>
 					
-					<div>
-						<input id="numInicial" type="range" min="1" max="10" value="5"/>
-						<br/>
-						<label for="numInicial">Numero de inimigos iniciais</label>
-					</div>
-					
+					<tr>
+                        <td>
+                            <label for="numInicial">Numero de inimigos iniciais</label>
+                        </td>
+                        <td>
+                            <input id="numInicial" type="range" min="1" max="10" value="5"/>
+                        </td>
+					</tr>
+                    </table>
                 </div>
 				
-                <input type="button" value="Iniciar"/>
+                <input type="button" class="interna" value="Iniciar"/>
             </div>
             
             <div id="palco" class="palco interna">
