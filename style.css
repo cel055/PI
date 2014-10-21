@@ -250,36 +250,36 @@ marquee p{
     -webkit-appearance: none;
     
     /*fix for FF unable to apply focus style bug */
-    border: 1px solid white;
+    border: 1px solid #0480B9;
     
     /*required for proper track sizing in FF*/
-    width: 300px;
+    width: 150px;
 }
 
 .custom input[type=range]::-webkit-slider-runnable-track {
-    width: 300px;
-    height: 5px;
-    background: #ddd;
-    border: none;
-    border-radius: 3px;
+    width: 150px;
+    height: 10px;
+    background-color: #000;
+    border: 1px solid #0480B9;
+    box-shadow: 0px 0px 5px 1px #0480B9, 0px 0px 5px 1px #0480B9 inset;
 }
 
 .custom input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
-    border: none;
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    background: goldenrod;
+    border: 2px solid #0480B9;
+    height: 15px;
+    width: 7px;
+    background: #000;
     margin-top: -4px;
 }
 
 .custom input[type=range]:focus {
     outline: none;
+    box-shadow: 0px 0px 40px 1px #0480B9, 0px 0px 40px 1px #0480B9 inset;
 }
 
 .custom input[type=range]:focus::-webkit-slider-runnable-track {
-    background: #ccc;
+/*    background: #ccc;*/
 }
 
 .custom input[type=range]::-moz-range-track {
