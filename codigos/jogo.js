@@ -94,8 +94,10 @@ var Heroi = function(elemento, velocidadeHeroi){
         if(this.topo < 0){
             if(palco.saida == 0){
                 console.log("venceu\nPonto:" + this.pontos);
+                document.removeEventListener("keydown", keyDownMovePersonagens, false);
+                document.removeEventListener("keyup", keyUpMovePersonagens, false);
                 clearInterval(intervalo);
-                iniciaPartida(7, 4, 2, 50, 3);
+                iniciaPartida(7, 4, 2, 50, 3, dificuldade.estrategia);
             }else{
                 this.topo = 0;
                 this.movePersonagem();
@@ -103,8 +105,10 @@ var Heroi = function(elemento, velocidadeHeroi){
         }else if(this.topo + this.altura > palco.altura){
             if(palco.saida == 2){
                 console.log("venceu\nPonto:" + this.pontos);
+                document.removeEventListener("keydown", keyDownMovePersonagens, false);
+                document.removeEventListener("keyup", keyUpMovePersonagens, false);
                 clearInterval(intervalo);
-                iniciaPartida(7, 4, 2, 50, 3);
+                iniciaPartida(7, 4, 2, 50, 3, dificuldade.estrategia);
             }else{
                 this.topo = palco.altura - this.altura;
                 this.movePersonagem();
@@ -114,8 +118,10 @@ var Heroi = function(elemento, velocidadeHeroi){
         if(this.esquerda < 0){
             if(palco.saida == 3){
                 console.log("venceu\nPonto:" + this.pontos);
+                document.removeEventListener("keydown", keyDownMovePersonagens, false);
+                document.removeEventListener("keyup", keyUpMovePersonagens, false);
                 clearInterval(intervalo);
-                iniciaPartida(7, 4, 2, 50, 3);
+                iniciaPartida(7, 4, 2, 50, 3, dificuldade.estrategia);
             }else{
                 this.esquerda = 0;
                 this.movePersonagem();
@@ -123,8 +129,10 @@ var Heroi = function(elemento, velocidadeHeroi){
         }else if(this.esquerda + this.largura > palco.largura){
             if(palco.saida == 1){
                 console.log("venceu\nPonto:" + this.pontos);
+                document.removeEventListener("keydown", keyDownMovePersonagens, false);
+                document.removeEventListener("keyup", keyUpMovePersonagens, false);
                 clearInterval(intervalo);
-                iniciaPartida(7, 4, 2, 50, 3);
+                iniciaPartida(7, 4, 2, 50, 3, dificuldade.estrategia);
             }else{
                 this.esquerda = palco.largura - this.largura;
                 this.movePersonagem();
@@ -141,8 +149,10 @@ var Inimigo = function(elemento, velocidadeInimigo){
     this.confereDerrota = function(){
         if(this.esquerda + this.largura >= heroi.esquerda && this.esquerda <= heroi.esquerda + heroi.largura && this.topo <= heroi.topo + heroi.altura && this.topo + this.altura >= heroi.topo ){
             console.log("perdeu\nPonto:" + heroi.pontos);
+            document.removeEventListener("keydown", keyDownMovePersonagens, false);
+            document.removeEventListener("keyup", keyUpMovePersonagens, false);
             clearInterval(intervalo);
-            iniciaJogo(7, 4, 2, 50, 3);
+            iniciaJogo(7, 4, 2, 50, 3, dificuldade.estrategia);
         }
     }
     
@@ -203,15 +213,23 @@ var Fruta = function(){
 window.addEventListener("load",inicia,false);
 
 function inicia(){    
-	iniciaJogo(7, 4, 2, 50, 3);
-    
-    document.addEventListener("keydown", keyDownMovePersonagens, false);
-    document.addEventListener("keyup", keyUpMovePersonagens, false);
+    document.getElementById("inicia").addEventListener("click",comecaJogo,false);
+
 }
 
-function iniciaJogo(saida, velocidadeHeroi, velocidadeInimigo, criacao, numInicioInimigos){
+function comecaJogo(evento){
+    var estrategia = document.getElementById("estrategia").checked;
+    document.getElementById("menuJogo").style.display = "none";
+
+    iniciaJogo(7, 6, 2, 50, 3, estrategia);
+}
+
+function iniciaJogo(saida, velocidadeHeroi, velocidadeInimigo, criacao, numInicioInimigos, modoEstrategia){
+    document.addEventListener("keydown", keyDownMovePersonagens, false);
+    document.addEventListener("keyup", keyUpMovePersonagens, false);
+
     cont = 0;
-    dificuldade = new Dificuldade(saida, velocidadeHeroi, velocidadeInimigo, criacao, numInicioInimigos,false);
+    dificuldade = new Dificuldade(saida, velocidadeHeroi, velocidadeInimigo, criacao, numInicioInimigos, modoEstrategia);
     
     palco = new Palco(document.getElementById("palco"));
     palco.setPosicaoInicial();
@@ -246,9 +264,12 @@ function iniciaJogo(saida, velocidadeHeroi, velocidadeInimigo, criacao, numInici
     }
 }
 
-function iniciaPartida(saida, velocidadeHeroi, inimigo, criacao, numInicioInimigos){
+function iniciaPartida(saida, velocidadeHeroi, inimigo, criacao, numInicioInimigos, modoEstrategia){
+    document.addEventListener("keydown", keyDownMovePersonagens, false);
+    document.addEventListener("keyup", keyUpMovePersonagens, false);
+
     cont = 0;
-    dificuldade = new Dificuldade(saida, velocidadeHeroi, inimigo, criacao, numInicioInimigos,false);
+    dificuldade = new Dificuldade(saida, velocidadeHeroi, inimigo, criacao, numInicioInimigos, modoEstrategia);
     
     while (palco.elemento.firstChild) {
         palco.elemento.removeChild(palco.elemento.firstChild);

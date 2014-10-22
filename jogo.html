@@ -20,15 +20,19 @@
 
                 <div class="radios">
 					
-					<input type="radio" id="dificil" value="dificil" name="dificuldade" checked/>
+					<input type="radio" id="dificil" value="dificil" name="dificuldade" />
 					<label for="dificil" >Difícil</label>
 					
-					<input type="radio" id="medio" value="medio" name="dificuldade" />
+					<input type="radio" id="medio" value="medio" name="dificuldade" checked/>
 					<label for="medio" >Médio</label>
 					
 					<input type="radio" id="facil" value="facil" name="dificuldade" />
 					<label for="facil" >Facil</label>
+
+                    <input type="radio" id="custom" value="custom" name="dificuldade"/>
+                    <label for="custom">Custom</label>
 					
+                    <br/>
 					<input type="checkbox" id="estrategia" checked/>
 					<label for="estrategia" >Modo estratégia</label>
                 </div>
@@ -46,10 +50,10 @@
 					
 					<tr>
                         <td>
-                            <label for="heroi">Velocidade do fantasma</label>
+                            <label for="velHeroi">Velocidade do fantasma</label>
                         </td>
                         <td>
-                            <input id="heroi" type="range" min="1" max="10" value="5"/>
+                            <input id="velHeroi" type="range" min="1" max="10" value="5"/>
                         </td>
 					</tr>
 					
@@ -82,7 +86,7 @@
                     </table>
                 </div>
 				
-                <input type="button" class="interna" value="Iniciar"/>
+                <input id="inicia" type="button" class="interna" value="Iniciar"/>
             </div>
             
             <div id="palco" class="palco interna">
