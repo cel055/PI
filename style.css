@@ -283,65 +283,41 @@ marquee p{
 }
 
 .custom input[type=range]::-moz-range-track {
-    width: 300px;
-    height: 5px;
-    background: #ddd;
-    border: none;
-    border-radius: 3px;
+    width: 150px;
+    height: 10px;
+    background-color: #000;
+    border: 1px solid #0480B9;
+    box-shadow: 0px 0px 5px 1px #0480B9, 0px 0px 5px 1px #0480B9 inset;
 }
 .custom input[type=range]::-moz-range-thumb {
-    border: none;
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    background: goldenrod;
+    border: 2px solid #0480B9;
+    height: 15px;
+    width: 7px;
+    background: #000;
 }
 
 /*hide the outline behind the border*/
 .custom input[type=range]:-moz-focusring{
-    outline: 1px solid white;
+    outline: 1px solid #0480B9;
     outline-offset: -1px;
 }
 
 .custom input[type=range]::-ms-track {
-    width: 300px;
-    height: 5px;
-    
-    /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
-    background: transparent;
-    
-    /*leave room for the larger thumb to overflow with a transparent border */
-    border-color: transparent;
-    border-width: 6px 0;
+    width: 150px;
+    height: 10px;
+    background-color: #000;
+    border: 1px solid #0480B9;
+    box-shadow: 0px 0px 5px 1px #0480B9, 0px 0px 5px 1px #0480B9 inset;
 
     /*remove default tick marks*/
     color: transparent;
 }
 
-.custom input[type=range]::-ms-fill-lower {
-    background: #777;
-    border-radius: 10px;
-}
-
-.custom input[type=range]::-ms-fill-upper {
-    background: #ddd;
-    border-radius: 10px;
-}
-
 .custom input[type=range]::-ms-thumb {
-    border: none;
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    background: goldenrod;
-}
-
-.custom input[type=range]:focus::-ms-fill-lower {
-    background: #888;
-}
-
-.custom input[type=range]:focus::-ms-fill-upper {
-    background: #ccc;
+    border: 2px solid #0480B9;
+    height: 15px;
+    width: 7px;
+    background: #000;
 }
 
 .menuJogo input[type=button]{
