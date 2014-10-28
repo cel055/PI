@@ -205,7 +205,7 @@ var Fruta = function(){
             heroi.pontos += this.pontos * this.numFruta;
             palco.elemento.removeChild(this.elemento);
             criaFruta();
-            console.log("pontos do heroi = " + heroi.pontos);
+            document.getElementById("pontos").innerHTML = heroi.pontos;
         }
     }
 }
