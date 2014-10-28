@@ -22,6 +22,10 @@ p, h1, h2, h3, a, label{
     text-shadow: 0px 0px 15px #0480B9;
 }
 
+input{
+    font-family:"PressStart2P";
+}
+
 :focus, :active{
     outline: none;
 }
