@@ -93,7 +93,7 @@ var Heroi = function(elemento, velocidadeHeroi){
     this.confereVitoria = function(){
         if(this.topo < 0){
             if(palco.saida == 0){
-                console.log("venceu\nPonto:" + this.pontos);
+                document.getElementById("pontos").innerHTML = heroi.pontos;
                 document.removeEventListener("keydown", keyDownMovePersonagens, false);
                 document.removeEventListener("keyup", keyUpMovePersonagens, false);
                 clearInterval(intervalo);
@@ -117,7 +117,7 @@ var Heroi = function(elemento, velocidadeHeroi){
         
         if(this.esquerda < 0){
             if(palco.saida == 3){
-                console.log("venceu\nPonto:" + this.pontos);
+                document.getElementById("pontos").innerHTML = heroi.pontos;
                 document.removeEventListener("keydown", keyDownMovePersonagens, false);
                 document.removeEventListener("keyup", keyUpMovePersonagens, false);
                 clearInterval(intervalo);
@@ -128,7 +128,7 @@ var Heroi = function(elemento, velocidadeHeroi){
             }
         }else if(this.esquerda + this.largura > palco.largura){
             if(palco.saida == 1){
-                console.log("venceu\nPonto:" + this.pontos);
+                document.getElementById("pontos").innerHTML = heroi.pontos;
                 document.removeEventListener("keydown", keyDownMovePersonagens, false);
                 document.removeEventListener("keyup", keyUpMovePersonagens, false);
                 clearInterval(intervalo);
@@ -148,7 +148,7 @@ var Inimigo = function(elemento, velocidadeInimigo){
     
     this.confereDerrota = function(){
         if(this.esquerda + this.largura >= heroi.esquerda && this.esquerda <= heroi.esquerda + heroi.largura && this.topo <= heroi.topo + heroi.altura && this.topo + this.altura >= heroi.topo ){
-            console.log("perdeu\nPonto:" + heroi.pontos);
+            document.getElementById("pontos").innerHTML = "0";
             document.removeEventListener("keydown", keyDownMovePersonagens, false);
             document.removeEventListener("keyup", keyUpMovePersonagens, false);
             clearInterval(intervalo);
