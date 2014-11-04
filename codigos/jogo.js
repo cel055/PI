@@ -218,6 +218,10 @@ function inicia(){
     document.getElementById("facil").addEventListener("click",mudaRadio,false);
     document.getElementById("estrategia").addEventListener("click",mudaRadio,false);
     document.getElementById("inicia").addEventListener("click",comecaJogo,false);
+    var listRange = document.getElementsByClassName("custom")[0].getElementsByTagName("input");
+    for(var i = 0; i < listRange.length; i++){
+        listRange[i].addEventListener("change",mudaRange,false);
+    }
 }
 
 function mudaRadio(evento){
@@ -240,7 +244,7 @@ function mudaRadio(evento){
             veloIni = 3;
             criacao = 25;
             iniInimigos = 3;
-        }else{
+        }else if(document.getElementById("dificil").checked){
             saida = 5;
             veloHeroi = 6;
             veloIni = 6;
@@ -260,7 +264,7 @@ function mudaRadio(evento){
             veloIni = 3;
             criacao = 70;
             iniInimigos = 2;
-        }else{
+        }else if(document.getElementById("dificil").checked){
             saida = 7;
             veloHeroi = 6;
             veloIni = 5;
@@ -276,11 +280,20 @@ function mudaRadio(evento){
     document.getElementById("numInicial").value = iniInimigos;
 }
 
+function mudaRange(evento){
+    document.getElementById("custom").checked = true;
+}
+
 function comecaJogo(evento){
+    var saida = parseInt(document.getElementById("saida").value);
+    var veloHeroi = parseInt(document.getElementById("velHeroi").value);
+    var veloIni = parseInt(document.getElementById("inimigo").value);
+    var criacao = parseInt(document.getElementById("criacao").value);
+    var iniInimigos = parseInt(document.getElementById("numInicial").value);
     var estrategia = document.getElementById("estrategia").checked;
     document.getElementById("menuJogo").style.display = "none";
 
-    iniciaJogo(7, 6, 2, 50, 3, estrategia);
+    iniciaJogo(saida, veloHeroi, veloIni, criacao, iniInimigos, estrategia);
 }
 
 function iniciaJogo(saida, velocidadeHeroi, velocidadeInimigo, criacao, numInicioInimigos, modoEstrategia){
@@ -328,7 +341,7 @@ function iniciaPartida(saida, velocidadeHeroi, inimigo, criacao, numInicioInimig
     document.addEventListener("keyup", keyUpMovePersonagens, false);
 
     cont = 0;
-    dificuldade = new Dificuldade(saida, velocidadeHeroi, inimigo, criacao, numInicioInimigos, modoEstrategia);
+//    dificuldade = new Dificuldade(saida, velocidadeHeroi, inimigo, criacao, numInicioInimigos, modoEstrategia);
     
     while (palco.elemento.firstChild) {
         palco.elemento.removeChild(palco.elemento.firstChild);
