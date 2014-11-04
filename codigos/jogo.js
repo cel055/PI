@@ -212,9 +212,68 @@ var Fruta = function(){
 
 window.addEventListener("load",inicia,false);
 
-function inicia(){    
+function inicia(){
+    document.getElementById("dificil").addEventListener("click",mudaRadio,false);
+    document.getElementById("medio").addEventListener("click",mudaRadio,false);
+    document.getElementById("facil").addEventListener("click",mudaRadio,false);
+    document.getElementById("estrategia").addEventListener("click",mudaRadio,false);
     document.getElementById("inicia").addEventListener("click",comecaJogo,false);
+}
 
+function mudaRadio(evento){
+    var saida;
+    var veloHeroi;
+    var veloIni;
+    var criacao;
+    var iniInimigos;
+    
+    if(document.getElementById("estrategia").checked){
+        if(document.getElementById("facil").checked){
+            saida = 10;
+            veloHeroi = 6;
+            veloIni = 2;
+            criacao = 30;
+            iniInimigos = 1;
+        }else if(document.getElementById("medio").checked){
+            saida = 7;
+            veloHeroi = 6;
+            veloIni = 3;
+            criacao = 25;
+            iniInimigos = 3;
+        }else{
+            saida = 5;
+            veloHeroi = 6;
+            veloIni = 6;
+            criacao = 25;
+            iniInimigos = 5;
+        }
+    }else{
+        if(document.getElementById("facil").checked){
+            saida = 15;
+            veloHeroi = 6;
+            veloIni = 2;
+            criacao = 100;
+            iniInimigos = 1;
+        }else if(document.getElementById("medio").checked){
+            saida = 7;
+            veloHeroi = 6;
+            veloIni = 3;
+            criacao = 70;
+            iniInimigos = 2;
+        }else{
+            saida = 7;
+            veloHeroi = 6;
+            veloIni = 5;
+            criacao = 50;
+            iniInimigos = 3;
+        }
+    }
+    
+    document.getElementById("saida").value = saida;
+    document.getElementById("velHeroi").value = veloHeroi;
+    document.getElementById("inimigo").value = veloIni;
+    document.getElementById("criacao").value = criacao;
+    document.getElementById("numInicial").value = iniInimigos;
 }
 
 function comecaJogo(evento){
