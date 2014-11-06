@@ -4,6 +4,15 @@
     <meta content="text/html; charset=UTF-8" http-equiv="content-type">
     <title>Pacac</title>
     <link rel="stylesheet" href="jQuery/jquery-ui.min.css">
+    <script>
+    function funcao1()
+    {
+    alert("Mensagem enviada com sucesso!! Equipe PacMonster");
+    }
+    </script>
+
+
+Read more: http://www.linhadecodigo.com.br/artigo/3593/alert-em-javascript.aspx#ixzz3IKOuewXZ
     <script type="text/javascript" src="jQuery/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="jQuery/jquery-ui.min.js"></script>
    
@@ -26,7 +35,7 @@
 
 
 
-            <form name="formulario" action="http://emailpacmonster.com" method="post">
+            <form name="formulario" action="#" method="post">
 
                 <input type=hidden name="destino" value="herbert.sprengel@gmail.com">
 
@@ -46,7 +55,8 @@
                 <textarea name="Mensagem" rows="10" cols="43" wrap="virtual"></textarea></p>
 
 
-                <p class="botoes"><input type="submit" value="Enviar Email"> <input type="reset" value="Limpar"><img class="logo" src="imagens/pacmanAberto.png"/></p>
+                <p class="botoes"><input type="button" value="Enviar Email" onclick="funcao1()" /> <input type="reset" value="Limpar"><img class="logo" src="imagens/pacmanAberto.png"/></p>
+                <p class="alert"</p>
             </form>
         </div>
     </div>
@@ -79,6 +89,7 @@
   color: #0480b9;
      
  }
+      
   </style>
       
 
