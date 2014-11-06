@@ -97,7 +97,7 @@ var Heroi = function(elemento, velocidadeHeroi){
                 document.removeEventListener("keydown", keyDownMovePersonagens, false);
                 document.removeEventListener("keyup", keyUpMovePersonagens, false);
                 clearInterval(intervalo);
-                iniciaPartida(7, 4, 2, 50, 3, dificuldade.estrategia);
+                iniciaPartida();
             }else{
                 this.topo = 0;
                 this.movePersonagem();
@@ -108,7 +108,7 @@ var Heroi = function(elemento, velocidadeHeroi){
                 document.removeEventListener("keydown", keyDownMovePersonagens, false);
                 document.removeEventListener("keyup", keyUpMovePersonagens, false);
                 clearInterval(intervalo);
-                iniciaPartida(7, 4, 2, 50, 3, dificuldade.estrategia);
+                iniciaPartida();
             }else{
                 this.topo = palco.altura - this.altura;
                 this.movePersonagem();
@@ -121,7 +121,7 @@ var Heroi = function(elemento, velocidadeHeroi){
                 document.removeEventListener("keydown", keyDownMovePersonagens, false);
                 document.removeEventListener("keyup", keyUpMovePersonagens, false);
                 clearInterval(intervalo);
-                iniciaPartida(7, 4, 2, 50, 3, dificuldade.estrategia);
+                iniciaPartida();
             }else{
                 this.esquerda = 0;
                 this.movePersonagem();
@@ -132,7 +132,7 @@ var Heroi = function(elemento, velocidadeHeroi){
                 document.removeEventListener("keydown", keyDownMovePersonagens, false);
                 document.removeEventListener("keyup", keyUpMovePersonagens, false);
                 clearInterval(intervalo);
-                iniciaPartida(7, 4, 2, 50, 3, dificuldade.estrategia);
+                iniciaPartida();
             }else{
                 this.esquerda = palco.largura - this.largura;
                 this.movePersonagem();
@@ -152,7 +152,7 @@ var Inimigo = function(elemento, velocidadeInimigo){
             document.removeEventListener("keydown", keyDownMovePersonagens, false);
             document.removeEventListener("keyup", keyUpMovePersonagens, false);
             clearInterval(intervalo);
-            iniciaJogo(7, 4, 2, 50, 3, dificuldade.estrategia);
+            alert("perdeu");
         }
     }
     
@@ -336,12 +336,12 @@ function iniciaJogo(saida, velocidadeHeroi, velocidadeInimigo, criacao, numInici
     }
 }
 
-function iniciaPartida(saida, velocidadeHeroi, inimigo, criacao, numInicioInimigos, modoEstrategia){
+function iniciaPartida(){
     document.addEventListener("keydown", keyDownMovePersonagens, false);
     document.addEventListener("keyup", keyUpMovePersonagens, false);
 
     cont = 0;
-//    dificuldade = new Dificuldade(saida, velocidadeHeroi, inimigo, criacao, numInicioInimigos, modoEstrategia);
+    dificuldade.inimigosIniciais++;
     
     while (palco.elemento.firstChild) {
         palco.elemento.removeChild(palco.elemento.firstChild);
