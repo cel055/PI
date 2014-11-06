@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <meta content="text/html; charset=UTF-8"/>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="../style.css"/>
+        <script src="../codigos/jogo.js"></script>
+    </head>
+    <body>
+        <div class="pai">
+            
+            <div style="margin:0;height:50px">
+                 <ul class="meuMenu">
+                    <li><a href="index.html"><img class="logo" src="../imagens/pacbad.png"/>HOME</a></li><li><a href="menuContato.html">Contact</a></li><li><a href="#">History</a></li><li><a href="jogo.html">GAME</a></li>
+                </ul>
+            </div>
+            
+            <div id="menuJogo" class="menuJogo interna">
+				
+                <p>Choose the difficulty:</p>
+
+                <div class="radios">
+					
+					<input type="radio" id="dificil" value="dificil" name="difficulty" />
+					<label for="dificil" >Hard</label>
+					
+					<input type="radio" id="medio" value="medio" name="difficulty" checked/>
+					<label for="medio" >Medium</label>
+					
+					<input type="radio" id="facil" value="facil" name="difficulty" />
+					<label for="facil" >Easy</label><br/>
+
+                    <input type="radio" id="custom" value="custom" name="difficulty"/>
+                    <label for="custom">Custom</label>
+					
+                    <br/>
+					<input type="checkbox" id="estrategia" checked/>
+					<label for="estrategia" >strategy mode</label>
+                </div>
+				
+                <div class="custom">
+                    <table>
+					<tr>
+                        <td>
+						  <label for="saida">Output speed</label>
+                        </td>
+                        <td>
+                            <input id="saida" type="range" min="5" max="15" value="7"/>
+                        </td>
+					</tr>
+					
+					<tr>
+                        <td>
+                            <label for="velHeroi">Speed ghost</label>
+                        </td>
+                        <td>
+                            <input id="velHeroi" type="range" min="5" max="10" value="6"/>
+                        </td>
+					</tr>
+					
+					<tr>
+                        <td>
+                            <label for="inimigo">Speed of the enemy</label>
+                        </td>
+                        <td>
+                            <input id="inimigo" type="range" min="1" max="10" value="3"/>
+                        </td>
+					</tr>
+					
+					<tr>
+                        <td>
+                            <label for="criacao">Speed setting of the enemy</label>
+                        </td>
+                        <td>
+                            <input id="criacao" type="range" min="25" max="100" value="25"/>
+                        </td>
+					</tr>
+					
+					<tr>
+                        <td>
+                            <label for="numInicial">Number of former enemies</label>
+                        </td>
+                        <td>
+                            <input id="numInicial" type="range" min="1" max="10" value="3"/>
+                        </td>
+					</tr>
+                    </table>
+                </div>
+				
+                <input id="inicia" type="button" class="interna" value="Start"/>
+            </div>
+            
+            <div id="palco" class="palco interna">
+            </div>
+            
+            <div id="placar" class="placar interna">
+                <p>Points:</p>
+                <p id="pontos">0</p>
+            </div>
+        </div>
+    </body>
+</html>
