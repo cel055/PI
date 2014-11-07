@@ -300,7 +300,7 @@ function iniciaJogo(saida, velocidadeHeroi, velocidadeInimigo, criacao, numInici
     document.addEventListener("keydown", keyDownMovePersonagens, false);
     document.addEventListener("keyup", keyUpMovePersonagens, false);
 
-    cont = 0;
+    cont = 1;
     dificuldade = new Dificuldade(saida, velocidadeHeroi, velocidadeInimigo, criacao, numInicioInimigos, modoEstrategia);
     
     palco = new Palco(document.getElementById("palco"));
@@ -340,7 +340,7 @@ function iniciaPartida(){
     document.addEventListener("keydown", keyDownMovePersonagens, false);
     document.addEventListener("keyup", keyUpMovePersonagens, false);
 
-    cont = 0;
+    cont = 1;
     dificuldade.inimigosIniciais++;
     
     while (palco.elemento.firstChild) {
@@ -371,37 +371,39 @@ function keyDownMovePersonagens(evento){
         evento.preventDefault();
         teclasPressionadas[evento.keyCode] = true;
         
-        if(teclasPressionadas[38]){
-            heroi.topo -= dificuldade.velocidadeHeroi;
-        }
-        if(teclasPressionadas[40]){
-            heroi.topo += dificuldade.velocidadeHeroi;
-        }
-	
-        if(teclasPressionadas[39]){
-            heroi.esquerda += dificuldade.velocidadeHeroi;
-        }
-        if(teclasPressionadas[37]){
-            heroi.esquerda -= dificuldade.velocidadeHeroi;
-        }
-        
-        heroi.movePersonagem();
-        heroi.confereVitoria();
-        
-        fruta.confereContato();
-        
         if(dificuldade.estrategia){
-            for(var i = 0; i < listInimigos.length; i++){
-                listInimigos[i].moveInimigo();
+            if(teclasPressionadas[38]){
+                heroi.topo -= dificuldade.velocidadeHeroi;
             }
-        }
-        
-        cont++;
-        if(cont % dificuldade.criaInimigo == 0){
-            criaInimigo();
-        }
-        if(cont % dificuldade.mudaSaida == 0){
-            palco.mudaSaida();
+            if(teclasPressionadas[40]){
+                heroi.topo += dificuldade.velocidadeHeroi;
+            }
+
+            if(teclasPressionadas[39]){
+                heroi.esquerda += dificuldade.velocidadeHeroi;
+            }
+            if(teclasPressionadas[37]){
+                heroi.esquerda -= dificuldade.velocidadeHeroi;
+            }
+
+            heroi.movePersonagem();
+            heroi.confereVitoria();
+
+            fruta.confereContato();
+
+//            if(dificuldade.estrategia){
+                for(var i = 0; i < listInimigos.length; i++){
+                    listInimigos[i].moveInimigo();
+                }
+//            }
+
+            cont++;
+            if(cont % dificuldade.criaInimigo == 0){
+                criaInimigo();
+            }
+            if(cont % dificuldade.mudaSaida == 0){
+                palco.mudaSaida();
+            }
         }
     }
 }
@@ -467,6 +469,37 @@ function criaFruta(){
 }
 
 function moveInimigos(){
+    if(teclasPressionadas[38]){
+        heroi.topo -= dificuldade.velocidadeHeroi;
+        cont++;
+    }
+    if(teclasPressionadas[40]){
+        heroi.topo += dificuldade.velocidadeHeroi;
+        cont++;
+    }
+
+    if(teclasPressionadas[39]){
+        heroi.esquerda += dificuldade.velocidadeHeroi;
+        cont++;
+    }
+    if(teclasPressionadas[37]){
+        heroi.esquerda -= dificuldade.velocidadeHeroi;
+        cont++;
+    }
+
+    heroi.movePersonagem();
+    heroi.confereVitoria();
+
+    fruta.confereContato();
+    
+    
+    if(cont % dificuldade.criaInimigo == 0){
+        criaInimigo();
+    }
+    if(cont % dificuldade.mudaSaida == 0){
+        palco.mudaSaida();
+    }
+    
     for(var i = 0; i < listInimigos.length; i++){
         listInimigos[i].moveInimigo();
     }
