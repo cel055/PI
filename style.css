@@ -40,6 +40,40 @@ input, textarea{
     background-color: black;
 }
 
+.band{
+    
+    position: absolute;
+    top: 5;
+    left: calc(50% + 380px);
+    left: -webkit-calc(50% + 380px);
+    left: -moz-calc(50% + 380px);
+    width: 15px;
+    height: 30px;
+    z-index: 1000;
+
+    }
+
+.bandeira{
+     height: 15px;
+    width: 15px;
+    border-radius: 50%
+    
+  
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 #container{
     height: 700px;
     padding: 10px;
