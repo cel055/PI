@@ -7,6 +7,7 @@ var divSaida;
 var fruta;
 var dificuldade;
 var intervalo;
+var fase;
 var teclasPressionadas = new Array();
 
 var Dificuldade = function(saida, heroi, inimigo, criacao, numInicioInimigos, estrategia){
@@ -97,7 +98,12 @@ var Heroi = function(elemento, velocidadeHeroi){
                 document.removeEventListener("keydown", keyDownMovePersonagens, false);
                 document.removeEventListener("keyup", keyUpMovePersonagens, false);
                 clearInterval(intervalo);
-                iniciaPartida();
+                fase++;
+                document.getElementById("gameOver").style.display = "block";
+                document.getElementById("titulo").innerHTML = "Fase " + fase;
+                document.getElementById("pontosGame").innerHTML = heroi.pontos;
+                teclasPressionadas = new Array();
+                document.getElementById("gameOver").addEventListener("click",iniciaPartida,false);
             }else{
                 this.topo = 0;
                 this.movePersonagem();
@@ -108,7 +114,12 @@ var Heroi = function(elemento, velocidadeHeroi){
                 document.removeEventListener("keydown", keyDownMovePersonagens, false);
                 document.removeEventListener("keyup", keyUpMovePersonagens, false);
                 clearInterval(intervalo);
-                iniciaPartida();
+                fase++;
+                document.getElementById("gameOver").style.display = "block";
+                document.getElementById("titulo").innerHTML = "Fase " + fase;
+                document.getElementById("pontosGame").innerHTML = heroi.pontos;
+                teclasPressionadas = new Array();
+                document.getElementById("gameOver").addEventListener("click",iniciaPartida,false);
             }else{
                 this.topo = palco.altura - this.altura;
                 this.movePersonagem();
@@ -121,7 +132,12 @@ var Heroi = function(elemento, velocidadeHeroi){
                 document.removeEventListener("keydown", keyDownMovePersonagens, false);
                 document.removeEventListener("keyup", keyUpMovePersonagens, false);
                 clearInterval(intervalo);
-                iniciaPartida();
+                fase++;
+                document.getElementById("gameOver").style.display = "block";
+                document.getElementById("titulo").innerHTML = "Fase " + fase;
+                document.getElementById("pontosGame").innerHTML = heroi.pontos;
+                teclasPressionadas = new Array();
+                document.getElementById("gameOver").addEventListener("click",iniciaPartida,false);
             }else{
                 this.esquerda = 0;
                 this.movePersonagem();
@@ -132,7 +148,12 @@ var Heroi = function(elemento, velocidadeHeroi){
                 document.removeEventListener("keydown", keyDownMovePersonagens, false);
                 document.removeEventListener("keyup", keyUpMovePersonagens, false);
                 clearInterval(intervalo);
-                iniciaPartida();
+                fase++;
+                document.getElementById("gameOver").style.display = "block";
+                document.getElementById("titulo").innerHTML = "Fase " + fase;
+                document.getElementById("pontosGame").innerHTML = heroi.pontos;
+                teclasPressionadas = new Array();
+                document.getElementById("gameOver").addEventListener("click",iniciaPartida,false);
             }else{
                 this.esquerda = palco.largura - this.largura;
                 this.movePersonagem();
@@ -148,11 +169,13 @@ var Inimigo = function(elemento, velocidadeInimigo){
     
     this.confereDerrota = function(){
         if(this.esquerda + this.largura >= heroi.esquerda && this.esquerda <= heroi.esquerda + heroi.largura && this.topo <= heroi.topo + heroi.altura && this.topo + this.altura >= heroi.topo ){
-            document.getElementById("pontos").innerHTML = "0";
             document.removeEventListener("keydown", keyDownMovePersonagens, false);
             document.removeEventListener("keyup", keyUpMovePersonagens, false);
             clearInterval(intervalo);
-            alert("perdeu");
+            document.getElementById("gameOver").style.display = "block";
+            document.getElementById("titulo").innerHTML = "GAME OVER";
+            document.getElementById("pontosGame").innerHTML = heroi.pontos;
+            document.getElementById("gameOver").addEventListener("click",function(){location.reload()},false);
         }
     }
     
@@ -300,6 +323,7 @@ function iniciaJogo(saida, velocidadeHeroi, velocidadeInimigo, criacao, numInici
     document.addEventListener("keydown", keyDownMovePersonagens, false);
     document.addEventListener("keyup", keyUpMovePersonagens, false);
 
+    fase = 1;
     cont = 1;
     dificuldade = new Dificuldade(saida, velocidadeHeroi, velocidadeInimigo, criacao, numInicioInimigos, modoEstrategia);
     
@@ -339,6 +363,8 @@ function iniciaJogo(saida, velocidadeHeroi, velocidadeInimigo, criacao, numInici
 function iniciaPartida(){
     document.addEventListener("keydown", keyDownMovePersonagens, false);
     document.addEventListener("keyup", keyUpMovePersonagens, false);
+    document.getElementById("gameOver").style.display = "none";
+    document.getElementById("gameOver").removeEventListener("click",iniciaPartida,false);
 
     cont = 1;
     dificuldade.inimigosIniciais++;
