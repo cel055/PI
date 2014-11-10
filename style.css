@@ -449,8 +449,7 @@ marquee p{
     text-align: center;
 }
 
-.gameOver #titulo{
-    text-shadow: 0 0 1px #000, 0 0 1px #000, 0 0 1px #000, 0 0 1px #000, 0 0 1px #000, 0 0 1px #000,0 0 1px #000, 0 0 1px #000,0 0 1px #000, 0 0 1px #000;
+.gameOver p{
     font-size: 1.6em;
 }
 

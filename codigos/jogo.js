@@ -101,7 +101,9 @@ var Heroi = function(elemento, velocidadeHeroi){
                 fase++;
                 document.getElementById("gameOver").style.display = "block";
                 document.getElementById("titulo").innerHTML = "Fase " + fase;
+                pontuacao();
                 document.getElementById("pontosGame").innerHTML = heroi.pontos;
+                document.getElementById("pontos").innerHTML = heroi.pontos;
                 teclasPressionadas = new Array();
                 document.getElementById("gameOver").addEventListener("click",iniciaPartida,false);
             }else{
@@ -117,7 +119,9 @@ var Heroi = function(elemento, velocidadeHeroi){
                 fase++;
                 document.getElementById("gameOver").style.display = "block";
                 document.getElementById("titulo").innerHTML = "Fase " + fase;
+                pontuacao();
                 document.getElementById("pontosGame").innerHTML = heroi.pontos;
+                document.getElementById("pontos").innerHTML = heroi.pontos;
                 teclasPressionadas = new Array();
                 document.getElementById("gameOver").addEventListener("click",iniciaPartida,false);
             }else{
@@ -135,7 +139,9 @@ var Heroi = function(elemento, velocidadeHeroi){
                 fase++;
                 document.getElementById("gameOver").style.display = "block";
                 document.getElementById("titulo").innerHTML = "Fase " + fase;
+                pontuacao();
                 document.getElementById("pontosGame").innerHTML = heroi.pontos;
+                document.getElementById("pontos").innerHTML = heroi.pontos;
                 teclasPressionadas = new Array();
                 document.getElementById("gameOver").addEventListener("click",iniciaPartida,false);
             }else{
@@ -151,7 +157,9 @@ var Heroi = function(elemento, velocidadeHeroi){
                 fase++;
                 document.getElementById("gameOver").style.display = "block";
                 document.getElementById("titulo").innerHTML = "Fase " + fase;
+                pontuacao();
                 document.getElementById("pontosGame").innerHTML = heroi.pontos;
+                document.getElementById("pontos").innerHTML = heroi.pontos;
                 teclasPressionadas = new Array();
                 document.getElementById("gameOver").addEventListener("click",iniciaPartida,false);
             }else{
@@ -174,6 +182,7 @@ var Inimigo = function(elemento, velocidadeInimigo){
             clearInterval(intervalo);
             document.getElementById("gameOver").style.display = "block";
             document.getElementById("titulo").innerHTML = "GAME OVER";
+            pontuacao();
             document.getElementById("pontosGame").innerHTML = heroi.pontos;
             document.getElementById("gameOver").addEventListener("click",function(){location.reload()},false);
         }
@@ -529,4 +538,10 @@ function moveInimigos(){
     for(var i = 0; i < listInimigos.length; i++){
         listInimigos[i].moveInimigo();
     }
+}
+
+function pontuacao(){
+    var pontos = heroi.pontos;
+    pontos += listInimigos.length * dificuldade.velocidadeInimigo / dificuldade.velocidadeHeroi;
+    heroi.pontos = pontos;
 }
