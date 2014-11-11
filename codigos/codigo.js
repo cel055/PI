@@ -11,8 +11,7 @@ function inicia(){
     $("#contato #assunto").on("blur",valAssunto);
     $("#contato #msg").on("blur",valMsg);
     $("#formulario").on("submit",enviarForm);
-
-    console.log("location : " + location.href.substring(location.href.lastIndexOf("/") + 1, location.href.lastIndexOf(".")));
+    
     if(location.href.substring(location.href.lastIndexOf("/") + 1, location.href.lastIndexOf(".")) == "menu1"){
         google.maps.event.addDomListener(window, 'load', iniciaMapa);
     }

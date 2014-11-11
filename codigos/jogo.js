@@ -8,6 +8,7 @@ var fruta;
 var dificuldade;
 var intervalo;
 var fase;
+var pastaIng = false;
 var teclasPressionadas = new Array();
 
 var Dificuldade = function(saida, heroi, inimigo, criacao, numInicioInimigos, estrategia){
@@ -245,6 +246,9 @@ var Fruta = function(){
 window.addEventListener("load",inicia,false);
 
 function inicia(){
+    if(location.href.indexOf("/en/") != -1){
+        pastaIng = true;
+    }
     document.getElementById("dificil").addEventListener("click",mudaRadio,false);
     document.getElementById("medio").addEventListener("click",mudaRadio,false);
     document.getElementById("facil").addEventListener("click",mudaRadio,false);
