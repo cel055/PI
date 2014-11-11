@@ -1,5 +1,8 @@
 $(document).ready(inicia);
 
+var mapa;
+var latLng;
+
 function inicia(){
     $("#acordion").accordion();
     $("#container .quadrado").on("click",abreDiv);
@@ -8,6 +11,11 @@ function inicia(){
     $("#contato #assunto").on("blur",valAssunto);
     $("#contato #msg").on("blur",valMsg);
     $("#formulario").on("submit",enviarForm);
+
+    console.log("location : " + location.href.substring(location.href.lastIndexOf("/") + 1, location.href.lastIndexOf(".")));
+    if(location.href.substring(location.href.lastIndexOf("/") + 1, location.href.lastIndexOf(".")) == "menu1"){
+        google.maps.event.addDomListener(window, 'load', iniciaMapa);
+    }
 }
 
 function abreDiv(evento){
@@ -18,6 +26,8 @@ function abreDiv(evento){
         $("#textoDesenvolvimento").css("display","block");
     }else{
         $("#textoEmpresa").css("display","block");
+        google.maps.event.trigger(mapa, 'resize');
+        mapa.setCenter(latLng);
     }
 }
 
@@ -82,4 +92,29 @@ function enviarForm(evento){
         evento.preventDefault();
         return;
     }
+}
+
+function iniciaMapa(){
+    var opcoes = {
+        zoom: 15,
+        center: new google.maps.LatLng(-27.762438,-48.579548)
+    };
+
+    mapa = new google.maps.Map(document.getElementById("mapa"),opcoes);
+
+    latLng = new google.maps.LatLng(-27.762438,-48.579548);
+
+    var marcador = new google.maps.Marker({
+        position: latLng,
+        map: mapa,
+        title: "Pac Monter Inc"
+    });
+
+    var info = new google.maps.InfoWindow({
+        content: '<div id="content">Pac Monster Inc.</div>'
+    });
+
+    google.maps.event.addListener(marcador, 'click',function(){
+        info.open(mapa, marcador);
+    });
 }
