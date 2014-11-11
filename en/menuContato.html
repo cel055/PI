@@ -33,27 +33,23 @@
 
 
 
-            <form name="formulario" action="#" method="post">
-
-                <input type=hidden name="destino" value="herbert.sprengel@gmail.com">
-
-                <input type=hidden name="enviado" value="http://www.pcmonster.com.htm">
+            <form id="formulario" name="formulario" action="../enviaMail.php" method="post">
 
                 <p><img class="logo" src="../imagens/cereja.png"/><b>Name:</b><br>
 
-                <input type=text name="nome" size="45"></p>
+                <input id="nome" type="text" name="nome" size="45"></p>
 
                 <p><img class="logo" src="../imagens/laranja.png"/><b>Mail:</b><br>
 
-                <input type=text name="email" size="45"></p>
+                <input id="email" type="text" name="email" size="45"></p>
 
                 <p><img class="logo" src="../imagens/morango.png"/><b>Subject:</b><br>
-                <input type=text name="assunto" size="45"></p>
+                <input id="assunto" type="text" name="assunto" size="45"></p>
                 <p class="textarea"><img class="logo" src="../imagens/heroi.png"/><b>Message:</b></br>
-                <textarea name="Mensagem" rows="10" cols="43" wrap="virtual"></textarea></p>
+                <textarea id="msg" name="mensagem" rows="10" cols="43"></textarea></p>
 
 
-                <p class="botoes"><input type="button" value="Send Mail" onclick="funcao1()" /> <input type="reset" value="Reset"><img class="logo" src="../imagens/pacmanAberto.png"/></p>
+                <p class="botoes"><input type="submit" value="Send Mail"/> <input type="reset" value="Reset"><img class="logo" src="../imagens/pacmanAberto.png"/></p>
                 <p class="alert"</p>
             </form>
         </div>
